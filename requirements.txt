@@ -1,6 +1,6 @@
 snowflake-connector-python[pandas]
 dbt-core
-dbt-snowflake
+dbt-duckdb
 apache-airflow[cncf.kubernetes,celery,postgres,google,amazon,s3,http,slack,statsd,jdbc,ssh]==2.9.2 # Choose specific extras based on your needs, a smaller set is good for dev
 apache-airflow-providers-cncf-kubernetes # If using KubernetesExecutor, ensure it's here
 apache-airflow-providers-postgres
@@ -11,3 +11,7 @@ pandas
 minio
 pyarrow
 pytest
+requests
+rapidfuzz
+duckdb
+ducklake

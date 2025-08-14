@@ -1,0 +1,93 @@
+[0m20:38:48.553424 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x778308f8f970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x778308dc1420>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x778307ce4220>]}
+
+
+============================== 20:38:48.556253 | 74e37d47-0b5c-4413-97d5-008ed38b05ca ==============================
+[0m20:38:48.556253 [info ] [MainThread]: Running with dbt=1.10.8
+[0m20:38:48.557269 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/airflow/.dbt', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt init', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True'}
+[0m20:38:48.563772 [info ] [MainThread]: Creating dbt configuration folder at /home/airflow/.dbt
+[0m20:39:24.190582 [debug] [MainThread]: Starter project path: /home/airflow/.local/lib/python3.10/site-packages/dbt/include/starter_project
+[0m20:39:24.353907 [info ] [MainThread]: 
+Your new dbt project "nyc_hiring_dbt" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m20:39:24.355132 [info ] [MainThread]: Setting up your profile.
+[0m20:41:21.191343 [error] [MainThread]: Encountered an error:
+
+[0m20:41:21.193781 [error] [MainThread]: Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/dbt/cli/requires.py", line 178, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/dbt/cli/requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/dbt/cli/main.py", line 483, in init
+    results = task.run()
+  File "/home/airflow/.local/lib/python3.10/site-packages/dbt/task/init.py", line 346, in run
+    self.setup_profile(profile_name)
+  File "/home/airflow/.local/lib/python3.10/site-packages/dbt/task/init.py", line 261, in setup_profile
+    adapter = self.ask_for_adapter_choice()
+  File "/home/airflow/.local/lib/python3.10/site-packages/dbt/task/init.py", line 242, in ask_for_adapter_choice
+    numeric_choice = click.prompt(prompt_msg, type=click.INT)
+  File "/home/airflow/.local/lib/python3.10/site-packages/click/termui.py", line 168, in prompt
+    value = prompt_func(prompt)
+  File "/home/airflow/.local/lib/python3.10/site-packages/click/termui.py", line 151, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m20:41:21.195598 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": false, "command_wall_clock_time": 152.69574, "process_in_blocks": "760", "process_kernel_time": 0.197991, "process_mem_max_rss": "97860", "process_out_blocks": "0", "process_user_time": 0.952638}
+[0m20:41:21.196646 [debug] [MainThread]: Command `dbt init` failed at 20:41:21.196555 after 152.70 seconds
+[0m20:41:21.197841 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x778308f8f970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x778307d38c10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x778307d37580>]}
+[0m20:41:21.198910 [debug] [MainThread]: Flushing usage events
+[0m20:41:21.761753 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m20:41:40.534803 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d8abcb038e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d8abb929030>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d8abb929000>]}
+
+
+============================== 20:41:40.537445 | 69789fb5-6a17-48e2-878f-142f613aedab ==============================
+[0m20:41:40.537445 [info ] [MainThread]: Running with dbt=1.10.8
+[0m20:41:40.538451 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': '/home/airflow/.dbt', 'log_path': 'logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt init', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True'}
+[0m20:41:49.308177 [info ] [MainThread]: A project called nyc_hiring_dbt already exists here.
+[0m20:41:49.309897 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 8.8152, "process_in_blocks": "0", "process_kernel_time": 0.202777, "process_mem_max_rss": "98088", "process_out_blocks": "0", "process_user_time": 0.975363}
+[0m20:41:49.310849 [debug] [MainThread]: Command `dbt init` succeeded at 20:41:49.310771 after 8.82 seconds
+[0m20:41:49.311752 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d8abcb038e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d8abb928190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d8abb97cc40>]}
+[0m20:41:49.312717 [debug] [MainThread]: Flushing usage events
+[0m20:41:49.606682 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m20:42:07.089664 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c26f94db9a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c26f82fc910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c26f82fc1f0>]}
+
+
+============================== 20:42:07.092066 | eaa3af02-1797-44b5-b95c-0120eb0c5897 ==============================
+[0m20:42:07.092066 [info ] [MainThread]: Running with dbt=1.10.8
+[0m20:42:07.093115 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/airflow/.dbt', 'debug': 'False', 'version_check': 'True', 'log_path': 'logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt init', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m20:42:15.979199 [debug] [MainThread]: Starter project path: /home/airflow/.local/lib/python3.10/site-packages/dbt/include/starter_project
+[0m20:42:16.135678 [info ] [MainThread]: 
+Your new dbt project "nyc_hiring_dbt" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m20:42:16.136826 [info ] [MainThread]: Setting up your profile.
+[0m20:42:20.837787 [info ] [MainThread]: Profile nyc_hiring_dbt written to /home/airflow/.dbt/profiles.yml using target's sample configuration. Once updated, you'll be able to start developing with dbt.
+[0m20:42:20.840055 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 13.79278, "process_in_blocks": "0", "process_kernel_time": 0.108449, "process_mem_max_rss": "111040", "process_out_blocks": "8", "process_user_time": 0.879648}
+[0m20:42:20.841183 [debug] [MainThread]: Command `dbt init` succeeded at 20:42:20.841086 after 13.79 seconds
+[0m20:42:20.842068 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c26f94db9a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c26f8350af0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c26f8351090>]}
+[0m20:42:20.843004 [debug] [MainThread]: Flushing usage events
+[0m20:42:21.359622 [debug] [MainThread]: An error was encountered while trying to flush usage events
