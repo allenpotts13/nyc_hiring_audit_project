@@ -11,3 +11,5 @@ pandas
 minio
 pyarrow
 pytest
+requests
+rapidfuzz
