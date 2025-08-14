@@ -8,6 +8,7 @@ import os
 from io import BytesIO
 from rapidfuzz import fuzz as rapid_fuzz
 from datetime import datetime, timedelta
+import duckdb
 
 load_dotenv()
 

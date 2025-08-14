@@ -1,0 +1,15 @@
+nyc_hiring_duckdb:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: /workspaces/nyc_hiring_audit_project/duckdb/nyc_hiring.duckdb
+      schema: main
+      extensions:
+        - ducklake
+      # Optional: DuckLake config
+      ducklake:
+        root_path: s3://project4-bronze/
+        s3_access_key_id: admin
+        s3_secret_access_key: password
+        s3_endpoint: http://host.docker.internal:9000
