@@ -1,25 +1,31 @@
-CREATE OR REPLACE TABLE payroll_silver AS
+{{ config(
+    pre_hook=[
+        "SET s3_access_key_id='admin'",
+        "SET s3_secret_access_key='password'",
+        "SET s3_endpoint='host.docker.internal:9000'",
+        "SET s3_url_style='path'",
+        "SET s3_use_ssl=false"
+    ]
+) }}
 SELECT
-    CAST("Fiscal Year" AS INTEGER) AS fiscal_year,
-    TRIM("Agency Name") AS agency_name,
-    TRIM("Title Description") AS job_title,
-    TRIM("Work Location Borough") AS borough,
-    TRIM("Leave Status as of June 30") AS leave_status,
+    CAST("fiscal_year" AS INTEGER) AS fiscal_year,
+    TRIM("agency_name") AS agency_name,
+    TRIM("title_description") AS job_title,
+    TRIM("work_location_borough") AS borough,
+    TRIM("leave_status_as_of_june_30") AS leave_status,
     CASE
-        WHEN LOWER("Pay Basis") = 'per annum' AND "Base Salary" IS NOT NULL
-            THEN CAST("Base Salary" AS DOUBLE)
+        WHEN LOWER("pay_basis") = 'per annum' AND "base_salary" IS NOT NULL
+            THEN CAST("base_salary" AS DOUBLE)
         ELSE NULL
     END AS payroll_salary_annual,
-    CAST("Regular Hours" AS DOUBLE) AS regular_hours,
-    CAST("Regular Gross Paid" AS DOUBLE) AS regular_gross_paid,
-    CAST("OT Hours" AS DOUBLE) AS ot_hours,
-    CAST("Total OT Paid" AS DOUBLE) AS total_ot_paid,
-    CAST("Total Other Pay" AS DOUBLE) AS total_other_pay,
-    CONCAT(TRIM("Agency Name"), ' ', TRIM("Title Description")) AS fuzzy_compare
-FROM payroll_bronze
-WHERE "Agency Name" IS NOT NULL
-  AND "Title Description" IS NOT NULL
-  AND "Base Salary" IS NOT NULL
-  AND LOWER("Pay Basis") = 'per annum';
-
-COPY payroll_silver TO 's3://project4-silver/payroll_silver.parquet' (FORMAT PARQUET);
+    CAST("regular_hours" AS DOUBLE) AS regular_hours,
+    CAST("regular_gross_paid" AS DOUBLE) AS regular_gross_paid,
+    CAST("ot_hours" AS DOUBLE) AS ot_hours,
+    CAST("total_ot_paid" AS DOUBLE) AS total_ot_paid,
+    CAST("total_other_pay" AS DOUBLE) AS total_other_pay,
+    CONCAT(TRIM("agency_name"), ' ', TRIM("title_description")) AS fuzzy_compare
+FROM citywide_payroll_bronze
+WHERE "agency_name" IS NOT NULL
+  AND "title_description" IS NOT NULL
+  AND "base_salary" IS NOT NULL
+  AND LOWER("pay_basis") = 'per annum'
