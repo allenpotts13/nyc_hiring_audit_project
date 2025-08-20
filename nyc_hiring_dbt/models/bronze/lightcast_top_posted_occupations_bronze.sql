@@ -7,4 +7,4 @@
         "SET s3_use_ssl=false"
     ]
 ) }}
-SELECT * FROM read_parquet('s3://project4-bronze/raw/Citywide_Payroll_Data.parquet')
+SELECT * FROM read_parquet('s3://project4-bronze/raw/Job_Postings_Top_Occs_3.parquet')

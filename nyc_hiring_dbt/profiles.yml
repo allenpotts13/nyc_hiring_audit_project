@@ -1,4 +1,4 @@
-nyc_hiring_duckdb:
+nyc_hiring_dbt:
   target: dev
   outputs:
     dev:
