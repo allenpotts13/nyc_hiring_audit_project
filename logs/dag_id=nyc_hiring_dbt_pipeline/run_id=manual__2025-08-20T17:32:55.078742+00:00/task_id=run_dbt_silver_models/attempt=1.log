@@ -1,0 +1,47 @@
+[2025-08-20T17:33:03.072+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-20T17:33:03.092+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: nyc_hiring_dbt_pipeline.run_dbt_silver_models manual__2025-08-20T17:32:55.078742+00:00 [queued]>
+[2025-08-20T17:33:03.101+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: nyc_hiring_dbt_pipeline.run_dbt_silver_models manual__2025-08-20T17:32:55.078742+00:00 [queued]>
+[2025-08-20T17:33:03.102+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-08-20T17:33:03.136+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): run_dbt_silver_models> on 2025-08-20 17:32:55.078742+00:00
+[2025-08-20T17:33:03.140+0000] {standard_task_runner.py:63} INFO - Started process 62327 to run task
+[2025-08-20T17:33:03.143+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'nyc_hiring_dbt_pipeline', 'run_dbt_silver_models', 'manual__2025-08-20T17:32:55.078742+00:00', '--job-id', '24', '--raw', '--subdir', 'DAGS_FOLDER/dbt_dag.py', '--cfg-path', '/tmp/tmpabs1aiph']
+[2025-08-20T17:33:03.144+0000] {standard_task_runner.py:91} INFO - Job 24: Subtask run_dbt_silver_models
+[2025-08-20T17:33:03.213+0000] {task_command.py:426} INFO - Running <TaskInstance: nyc_hiring_dbt_pipeline.run_dbt_silver_models manual__2025-08-20T17:32:55.078742+00:00 [running]> on host 4e81cb17b5ff
+[2025-08-20T17:33:03.316+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='nyc_hiring_dbt_pipeline' AIRFLOW_CTX_TASK_ID='run_dbt_silver_models' AIRFLOW_CTX_EXECUTION_DATE='2025-08-20T17:32:55.078742+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-20T17:32:55.078742+00:00'
+[2025-08-20T17:33:03.316+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-20T17:33:06.694+0000] {logging_mixin.py:188} INFO - DBT command succeeded: dbt run --profile nyc_hiring_dbt --select silver
+[2025-08-20T17:33:06.695+0000] {logging_mixin.py:188} INFO - stdout:
+17:33:04  Running with dbt=1.10.8
+17:33:04  Registered adapter: duckdb=1.9.4
+17:33:04  [WARNING]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.nyc_hiring_dbt.gold
+17:33:05  Found 14 models, 429 macros
+17:33:05  
+17:33:05  Concurrency: 1 threads (target='dev')
+17:33:05  
+17:33:05  1 of 6 START sql table model main.citywide_payroll_silver ...................... [RUN]
+17:33:05  1 of 6 OK created sql table model main.citywide_payroll_silver ................. [OK in 0.43s]
+17:33:05  2 of 6 START sql table model main.jobs_postings_silver ......................... [RUN]
+17:33:05  2 of 6 OK created sql table model main.jobs_postings_silver .................... [OK in 0.09s]
+17:33:05  3 of 6 START sql table model main.lightcast_top_posted_job_titles_silver ....... [RUN]
+17:33:05  3 of 6 OK created sql table model main.lightcast_top_posted_job_titles_silver .. [OK in 0.08s]
+17:33:05  4 of 6 START sql table model main.lightcast_top_posted_occupations_onet_silver . [RUN]
+17:33:05  4 of 6 OK created sql table model main.lightcast_top_posted_occupations_onet_silver  [OK in 0.08s]
+17:33:05  5 of 6 START sql table model main.lightcast_top_posted_occupations_silver ...... [RUN]
+17:33:05  5 of 6 OK created sql table model main.lightcast_top_posted_occupations_silver . [OK in 0.08s]
+17:33:05  6 of 6 START sql table model main.lightcast_top_posted_occupations_soc_silver .. [RUN]
+17:33:06  6 of 6 OK created sql table model main.lightcast_top_posted_occupations_soc_silver  [OK in 0.08s]
+17:33:06  
+17:33:06  Finished running 6 table models in 0 hours 0 minutes and 1.01 seconds (1.01s).
+17:33:06  
+17:33:06  Completed successfully
+17:33:06  
+17:33:06  Done. PASS=6 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=6
+[2025-08-20T17:33:06.695+0000] {logging_mixin.py:188} INFO - stderr:
+[2025-08-20T17:33:06.695+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-08-20T17:33:06.695+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-20T17:33:06.705+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=nyc_hiring_dbt_pipeline, task_id=run_dbt_silver_models, run_id=manual__2025-08-20T17:32:55.078742+00:00, execution_date=20250820T173255, start_date=20250820T173303, end_date=20250820T173306
+[2025-08-20T17:33:06.764+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-08-20T17:33:06.779+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-08-20T17:33:06.780+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

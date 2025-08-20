@@ -1,0 +1,49 @@
+[2025-08-20T17:32:32.701+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-20T17:32:32.726+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: nyc_hiring_dbt_pipeline.run_dbt_bronze_models manual__2025-08-20T17:32:30.679861+00:00 [queued]>
+[2025-08-20T17:32:32.734+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: nyc_hiring_dbt_pipeline.run_dbt_bronze_models manual__2025-08-20T17:32:30.679861+00:00 [queued]>
+[2025-08-20T17:32:32.735+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-08-20T17:32:32.769+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): run_dbt_bronze_models> on 2025-08-20 17:32:30.679861+00:00
+[2025-08-20T17:32:32.773+0000] {standard_task_runner.py:63} INFO - Started process 61683 to run task
+[2025-08-20T17:32:32.776+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'nyc_hiring_dbt_pipeline', 'run_dbt_bronze_models', 'manual__2025-08-20T17:32:30.679861+00:00', '--job-id', '22', '--raw', '--subdir', 'DAGS_FOLDER/dbt_dag.py', '--cfg-path', '/tmp/tmp47uwqfhm']
+[2025-08-20T17:32:32.778+0000] {standard_task_runner.py:91} INFO - Job 22: Subtask run_dbt_bronze_models
+[2025-08-20T17:32:32.859+0000] {task_command.py:426} INFO - Running <TaskInstance: nyc_hiring_dbt_pipeline.run_dbt_bronze_models manual__2025-08-20T17:32:30.679861+00:00 [running]> on host 4e81cb17b5ff
+[2025-08-20T17:32:32.967+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='nyc_hiring_dbt_pipeline' AIRFLOW_CTX_TASK_ID='run_dbt_bronze_models' AIRFLOW_CTX_EXECUTION_DATE='2025-08-20T17:32:30.679861+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-20T17:32:30.679861+00:00'
+[2025-08-20T17:32:32.968+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-20T17:32:35.442+0000] {logging_mixin.py:188} INFO - Error running dbt command: dbt run --profile nyc_hiring_dbt --select bronze
+[2025-08-20T17:32:35.443+0000] {logging_mixin.py:188} INFO - stdout:
+17:32:33  Running with dbt=1.10.8
+17:32:34  Registered adapter: duckdb=1.9.4
+17:32:34  [WARNING]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.nyc_hiring_dbt.gold
+17:32:34  Found 14 models, 429 macros
+17:32:34  
+17:32:34  Concurrency: 1 threads (target='dev')
+17:32:34  
+17:32:34  
+17:32:34  Finished running  in 0 hours 0 minutes and 0.05 seconds (0.05s).
+17:32:34  Encountered an error:
+Runtime Error
+  IO Error: Could not set lock on file "/workspaces/nyc_hiring_audit_project/duckdb/nyc_hiring.duckdb": Conflicting lock is held in PID 0. See also https://duckdb.org/docs/stable/connect/concurrency
+[2025-08-20T17:32:35.443+0000] {logging_mixin.py:188} INFO - stderr:
+[2025-08-20T17:32:35.443+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-20T17:32:35.444+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/airflow/dags/dbt_dag.py", line 32, in run_dbt_command
+    raise Exception(f"DBT command failed with return code {process.returncode}")
+Exception: DBT command failed with return code 2
+[2025-08-20T17:32:35.457+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=nyc_hiring_dbt_pipeline, task_id=run_dbt_bronze_models, run_id=manual__2025-08-20T17:32:30.679861+00:00, execution_date=20250820T173230, start_date=20250820T173232, end_date=20250820T173235
+[2025-08-20T17:32:35.489+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 22 for task run_dbt_bronze_models (DBT command failed with return code 2; 61683)
+[2025-08-20T17:32:35.515+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-08-20T17:32:35.534+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-08-20T17:32:35.557+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,68 @@
+[2025-08-20T15:32:18.588+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-20T15:32:18.609+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_acquisition_dag.run_data_acquisition manual__2025-08-20T15:32:15.851815+00:00 [queued]>
+[2025-08-20T15:32:18.617+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_acquisition_dag.run_data_acquisition manual__2025-08-20T15:32:15.851815+00:00 [queued]>
+[2025-08-20T15:32:18.618+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-08-20T15:32:18.649+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): run_data_acquisition> on 2025-08-20 15:32:15.851815+00:00
+[2025-08-20T15:32:18.654+0000] {standard_task_runner.py:63} INFO - Started process 22786 to run task
+[2025-08-20T15:32:18.657+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'data_acquisition_dag', 'run_data_acquisition', 'manual__2025-08-20T15:32:15.851815+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/ingestion_dag.py', '--cfg-path', '/tmp/tmpvclhusqh']
+[2025-08-20T15:32:18.659+0000] {standard_task_runner.py:91} INFO - Job 4: Subtask run_data_acquisition
+[2025-08-20T15:32:18.728+0000] {task_command.py:426} INFO - Running <TaskInstance: data_acquisition_dag.run_data_acquisition manual__2025-08-20T15:32:15.851815+00:00 [running]> on host 4e81cb17b5ff
+[2025-08-20T15:32:18.824+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='data_acquisition_dag' AIRFLOW_CTX_TASK_ID='run_data_acquisition' AIRFLOW_CTX_EXECUTION_DATE='2025-08-20T15:32:15.851815+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-20T15:32:15.851815+00:00'
+[2025-08-20T15:32:18.824+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-20T15:32:18.831+0000] {ingestion_dag.py:23} INFO - Running data acquisition tasks for manual__2025-08-20T15:32:15.851815+00:00
+[2025-08-20T15:32:18.831+0000] {data_acquisition.py:80} INFO - ============================================================
+[2025-08-20T15:32:18.832+0000] {data_acquisition.py:81} INFO - STARTING DATA ACQUISITION
+[2025-08-20T15:32:18.832+0000] {data_acquisition.py:82} INFO - ============================================================
+[2025-08-20T15:32:18.871+0000] {logging_mixin.py:188} WARNING - /opt/airflow/src/data_acquisition.py:64 FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+[2025-08-20T15:32:18.913+0000] {logging_mixin.py:188} INFO - Uploaded raw/Advertised_Salary.parquet to MinIO
+[2025-08-20T15:32:18.915+0000] {logging_mixin.py:188} WARNING - /opt/airflow/src/data_acquisition.py:64 FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+[2025-08-20T15:32:18.927+0000] {logging_mixin.py:188} INFO - Uploaded raw/Advertised_Salary_Trend.parquet to MinIO
+[2025-08-20T15:32:18.928+0000] {logging_mixin.py:188} WARNING - /opt/airflow/src/data_acquisition.py:64 FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+[2025-08-20T15:32:18.942+0000] {logging_mixin.py:188} INFO - Uploaded raw/Full_Text_Job_Posting_Samples.parquet to MinIO
+[2025-08-20T15:32:18.944+0000] {logging_mixin.py:188} WARNING - /opt/airflow/src/data_acquisition.py:64 FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+[2025-08-20T15:32:18.956+0000] {logging_mixin.py:188} INFO - Uploaded raw/Job_Postings_Timeseries.parquet to MinIO
+[2025-08-20T15:32:18.957+0000] {logging_mixin.py:188} WARNING - /opt/airflow/src/data_acquisition.py:64 FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+[2025-08-20T15:32:18.969+0000] {logging_mixin.py:188} INFO - Uploaded raw/Edu_and_Experience_Breakdown.parquet to MinIO
+[2025-08-20T15:32:18.970+0000] {logging_mixin.py:188} WARNING - /opt/airflow/src/data_acquisition.py:64 FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+[2025-08-20T15:32:18.983+0000] {logging_mixin.py:188} INFO - Uploaded raw/Edu_and_Experience_Break..._2.parquet to MinIO
+[2025-08-20T15:32:18.984+0000] {logging_mixin.py:188} WARNING - /opt/airflow/src/data_acquisition.py:64 FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+[2025-08-20T15:32:18.997+0000] {logging_mixin.py:188} INFO - Uploaded raw/Edu_and_Experience_Break..._3.parquet to MinIO
+[2025-08-20T15:32:18.998+0000] {logging_mixin.py:188} WARNING - /opt/airflow/src/data_acquisition.py:64 FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+[2025-08-20T15:32:19.011+0000] {logging_mixin.py:188} INFO - Uploaded raw/Job_Postings_Top_Companies.parquet to MinIO
+[2025-08-20T15:32:19.012+0000] {logging_mixin.py:188} WARNING - /opt/airflow/src/data_acquisition.py:64 FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+[2025-08-20T15:32:19.024+0000] {logging_mixin.py:188} INFO - Uploaded raw/Job_Postings_Top_Cities.parquet to MinIO
+[2025-08-20T15:32:19.025+0000] {logging_mixin.py:188} WARNING - /opt/airflow/src/data_acquisition.py:64 FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+[2025-08-20T15:32:19.038+0000] {logging_mixin.py:188} INFO - Uploaded raw/Job_Postings_Top_Occs.parquet to MinIO
+[2025-08-20T15:32:19.039+0000] {logging_mixin.py:188} WARNING - /opt/airflow/src/data_acquisition.py:64 FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+[2025-08-20T15:32:19.051+0000] {logging_mixin.py:188} INFO - Uploaded raw/Job_Postings_Top_Occs_2.parquet to MinIO
+[2025-08-20T15:32:19.052+0000] {logging_mixin.py:188} WARNING - /opt/airflow/src/data_acquisition.py:64 FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+[2025-08-20T15:32:19.065+0000] {logging_mixin.py:188} INFO - Uploaded raw/Job_Postings_Top_Occs_3.parquet to MinIO
+[2025-08-20T15:32:19.066+0000] {logging_mixin.py:188} WARNING - /opt/airflow/src/data_acquisition.py:64 FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+[2025-08-20T15:32:19.080+0000] {logging_mixin.py:188} INFO - Uploaded raw/Job_Postings_Job_Titles.parquet to MinIO
+[2025-08-20T15:32:19.081+0000] {logging_mixin.py:188} WARNING - /opt/airflow/src/data_acquisition.py:64 FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+[2025-08-20T15:32:19.093+0000] {logging_mixin.py:188} INFO - Uploaded raw/Job_Postings_Top_Inds.parquet to MinIO
+[2025-08-20T15:32:19.094+0000] {logging_mixin.py:188} WARNING - /opt/airflow/src/data_acquisition.py:64 FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+[2025-08-20T15:32:19.106+0000] {logging_mixin.py:188} INFO - Uploaded raw/Top_Specialized_Skills.parquet to MinIO
+[2025-08-20T15:32:19.108+0000] {logging_mixin.py:188} WARNING - /opt/airflow/src/data_acquisition.py:64 FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+[2025-08-20T15:32:19.121+0000] {logging_mixin.py:188} INFO - Uploaded raw/Top_Common_Skills.parquet to MinIO
+[2025-08-20T15:32:19.122+0000] {logging_mixin.py:188} WARNING - /opt/airflow/src/data_acquisition.py:64 FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+[2025-08-20T15:32:19.135+0000] {logging_mixin.py:188} INFO - Uploaded raw/Top_Software_Skills.parquet to MinIO
+[2025-08-20T15:32:19.136+0000] {logging_mixin.py:188} WARNING - /opt/airflow/src/data_acquisition.py:64 FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+[2025-08-20T15:32:19.148+0000] {logging_mixin.py:188} INFO - Uploaded raw/Top_Qualifications_2.parquet to MinIO
+[2025-08-20T15:32:19.149+0000] {logging_mixin.py:188} WARNING - /opt/airflow/src/data_acquisition.py:64 FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+[2025-08-20T15:32:19.162+0000] {logging_mixin.py:188} INFO - Uploaded raw/Appendix_A.parquet to MinIO
+[2025-08-20T15:32:19.163+0000] {data_acquisition.py:92} INFO - URL for Citywide_Payroll_Data.json: https://data.cityofnewyork.us/resource/k397-673e.json
+[2025-08-20T15:32:19.164+0000] {data_acquisition.py:16} INFO - Downloading JSON data from https://data.cityofnewyork.us/resource/k397-673e.json
+[2025-08-20T15:32:20.359+0000] {data_acquisition.py:26} INFO - Saved Parquet file to /tmp/Citywide_Payroll_Data.parquet
+[2025-08-20T15:32:20.380+0000] {data_acquisition.py:41} INFO - Parquet file uploaded to MinIO at project4-bronze/raw/Citywide_Payroll_Data.parquet
+[2025-08-20T15:32:20.381+0000] {data_acquisition.py:92} INFO - URL for Jobs_NYC_Postings_Data.json: https://data.cityofnewyork.us/resource/kpav-sd4t.json
+[2025-08-20T15:32:20.381+0000] {data_acquisition.py:16} INFO - Downloading JSON data from https://data.cityofnewyork.us/resource/kpav-sd4t.json
+[2025-08-20T15:32:21.228+0000] {data_acquisition.py:26} INFO - Saved Parquet file to /tmp/Jobs_NYC_Postings_Data.parquet
+[2025-08-20T15:32:21.376+0000] {data_acquisition.py:41} INFO - Parquet file uploaded to MinIO at project4-bronze/raw/Jobs_NYC_Postings_Data.parquet
+[2025-08-20T15:32:21.379+0000] {ingestion_dag.py:30} INFO - Data acquisition tasks completed successfully for manual__2025-08-20T15:32:15.851815+00:00
+[2025-08-20T15:32:21.379+0000] {python.py:237} INFO - Done. Returned value was: True
+[2025-08-20T15:32:21.380+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-20T15:32:21.417+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=data_acquisition_dag, task_id=run_data_acquisition, run_id=manual__2025-08-20T15:32:15.851815+00:00, execution_date=20250820T153215, start_date=20250820T153218, end_date=20250820T153221
+[2025-08-20T15:32:21.476+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-08-20T15:32:21.490+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-08-20T15:32:21.491+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

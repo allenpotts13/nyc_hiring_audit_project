@@ -22,11 +22,13 @@ SELECT
     TRIM(division_work_unit) AS division_work_unit,
 
     TRY_CAST(posting_date AS TIMESTAMP) AS posting_date,
-    TRY_CAST(post_until AS TIMESTAMP) AS post_until,
+    TRY_CAST(STRPTIME(post_until, '%d-%b-%Y') AS TIMESTAMP) AS post_until,
 
     CASE
-        WHEN TRY_CAST(post_until AS TIMESTAMP) IS NOT NULL AND TRY_CAST(posting_date AS TIMESTAMP) IS NOT NULL
-            THEN DATE_DIFF('day', TRY_CAST(posting_date AS TIMESTAMP), TRY_CAST(post_until AS TIMESTAMP))
+        WHEN TRY_CAST(STRPTIME(post_until, '%d-%b-%Y') AS TIMESTAMP) IS NOT NULL AND TRY_CAST(posting_date AS TIMESTAMP) IS NOT NULL
+            THEN DATE_DIFF('day', TRY_CAST(posting_date AS TIMESTAMP), TRY_CAST(STRPTIME(post_until, '%d-%b-%Y') AS TIMESTAMP))
+        WHEN TRY_CAST(STRPTIME(post_until, '%d-%b-%Y') AS TIMESTAMP) IS NULL AND TRY_CAST(posting_date AS TIMESTAMP) IS NOT NULL
+            THEN 30
         ELSE NULL
     END AS posting_duration_days,
 
