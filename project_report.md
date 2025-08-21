@@ -87,5 +87,55 @@ The pipeline ingests raw NY job postings, processes and cleans the data, applies
 2. Getting the fuzzy match logic figured out
 3. Hooking Metabase and DuckDB. 
 4. Sick day/vacation day
+**Prioritization**
+1. Focused on the requested deliverables
+2. Testing which database I was going to use
+
+## 6. Summary of Findings for Tuekey Agency
+- **Jobs Matched to Payroll**: 
+
+| job_id | business_title | agency | posting_date | post_until |posting_duration_days | salary_range_from | salary_range_to | Payroll Fuzzy Match | Payroll Salary Annual | Match Ratio |
+|--------|----------------|--------|--------------|------------|----------------------|-------------------|-----------------|---------------------|----------------------|------------|
+| 724206 | AGENCY ATTORNEY III | NYC HOUSING AUTHORITY | 2025-08-11 00:00:00 |  | 30 | 106404 | 120000 | ADMIN FOR CHILDREN'S SVCS AGENCY ATTORNEY INTERNE | 76127 | 88.24 |
+| 708028 | DEPUTY DIRECTOR | HRA/DEPT OF SOCIAL SERVICES | 2025-03-20 00:00:00 |  | 30 | 82194 | 94523 | ADMIN FOR CHILDREN'S SVCS DEPUTY DIRECTOR OF ADMINISTRATION | 144200 | 100 |
+| 704116 | ATTORNEY INTERNE | HRA/DEPT OF SOCIAL SERVICES | 2025-02-25 00:00:00 |  | 30 | 70228 | 80763 | ADMIN FOR CHILDREN'S SVCS AGENCY ATTORNEY INTERNE | 76127 | 100 |
+| 712082 | AGENCY ATTORNEY INTERNE | HUMAN RIGHTS COMMISSION | 2025-04-22 00:00:00 |  | 30 | 72510 | 83388 | ADMIN FOR CHILDREN'S SVCS AGENCY ATTORNEY INTERNE | 76127 | 100 |
+| 708645 | AGENCY ATTORNEY | NYC EMPLOYEES RETIREMENT SYS | 2025-03-26 00:00:00 |  | 30 | 71163 | 108641 | ADMIN FOR CHILDREN'S SVCS AGENCY ATTORNEY INTERNE | 76127 | 100 |
+| 712078 | AGENCY ATTORNEY II | HUMAN RIGHTS COMMISSION | 2025-04-22 00:00:00 |  | 30 | 83000 | 95450 | ADMIN FOR CHILDREN'S SVCS AGENCY ATTORNEY INTERNE | 76127 | 90.91 |
+| 700502 | SNAP DEPUTY DIRECTOR | HRA/DEPT OF SOCIAL SERVICES | 2025-01-31 00:00:00 |  | 30 | 66062 | 75971 | ADMIN FOR CHILDREN'S SVCS DEPUTY DIRECTOR OF ADMINISTRATION | 144200 | 85.71 |
+| 721058 | COMMUNITY ASSOCIATE | NYC HOUSING AUTHORITY | 2025-08-06 00:00:00 | 2025-08-26 00:00:00 | 20 | 44545 | 74134 | ADMIN FOR CHILDREN'S SVCS COMMUNITY ASSOCIATE | 53743 | 100 |
+| 622688 | ASSOCIATE CONTRACT SPECIALIST | DEPT OF YOUTH & COMM DEV SRVS | 2025-08-15 00:00:00 |  | 30 | 65775 | 99115 | ADMIN FOR CHILDREN'S SVCS ASSOCIATE CONTRACT SPECIALIST | 92996 | 100 |
+| 724206 | AGENCY ATTORNEY III | NYC HOUSING AUTHORITY | 2025-08-11 00:00:00 |  | 30 | 106404 | 120000 | ADMIN FOR CHILDREN'S SVCS AGENCY ATTORNEY INTERNE | 76127 | 88.24 |
+| 712426 | ATTORNEY INTERNE | HRA/DEPT OF SOCIAL SERVICES | 2025-04-24 00:00:00 |  | 30 | 70228 | 80763 | ADMIN FOR CHILDREN'S SVCS AGENCY ATTORNEY INTERNE | 76127 | 100 |
+| 706057 | DEPUTY DIRECTOR | HRA/DEPT OF SOCIAL SERVICES | 2025-03-07 00:00:00 |  | 30 | 82194 | 94523 | ADMIN FOR CHILDREN'S SVCS DEPUTY DIRECTOR OF ADMINISTRATION | 144200 | 100 |
+| 716584 | PRINCIPAL ADMINISTRATIVE ASSOCIATE | DEPT OF ENVIRONMENT PROTECTION | 2025-06-30 00:00:00 |  | 30 | 66062 | 75971 | ADMIN FOR CHILDREN'S SVCS PRINCIPAL ADMINISTRATIVE ASSOCIATE -  NON SUPVR | 81955 | 100 |
 
 
+
+- **Longest Posting Duration**: 
+
+| job_id | business_title | agency | posting_date | post_until | posting_duration_days | salary_range_from | salary_range_to | Payroll Fuzzy Match | Payroll Salary Annual | Match Ratio |
+|--------|---------------|--------|--------------|------------|----------------------|-------------------|-----------------|---------------------|----------------------|------------|
+| 631292 | Cell Site Analyst | BRONX DISTRICT ATTORNEY | 2024-03-21 00:00:00 | 2026-12-15 00:00:00 | 999 | 75000 | 75000 |  |  |  |
+| 642738 | Special Officer/Peace Officer | BRONX DISTRICT ATTORNEY | 2024-07-17 00:00:00 | 2027-04-12 00:00:00 | 999 | 38074 | 53264 |  |  |  |
+| 627043 | Assistant District Attorney Child Abuse/Sex Crimes Bureau | BRONX DISTRICT ATTORNEY | 2024-02-14 00:00:00 | 2026-11-09 00:00:00 | 999 | 88000 | 175000 |  |  |  |
+| 683104 | Civil Litigation Bureau / FOIL Unit: Assistant District Attorney | BRONX DISTRICT ATTORNEY | 2024-10-04 00:00:00 | 2026-07-31 00:00:00 | 665 | 93000 | 175000 |  |  |  |
+| 681376 | Network Engineer Intern, Bureau of IT Infrastructure and Support Services | DEPT OF HEALTH/MENTAL HYGIENE | 2024-09-24 00:00:00 | 2025-09-24 00:00:00 | 365 | 18.54 | 23.32 |  |  |  |
+| ...    | ...           | ...    | ...          | ...        | ...                  | ...               | ...             | ...                 | ...                  | ...        |
+
+
+
+- **Shortest Posting Duration**:
+
+| job_id  | business_title                        | agency                      | posting_date         | post_until           | posting_duration_days | salary_range_from | salary_range_to | Payroll Fuzzy Match | Payroll Salary Annual | Match Ratio |
+|---------|---------------------------------------|-----------------------------|----------------------|----------------------|----------------------|-------------------|-----------------|---------------------|----------------------|------------|
+| 699947  | Senior Data Analyst                   | ADMIN FOR CHILDREN'S SVCS   | 2025-08-13 00:00:00 | 2025-08-23 00:00:00  | 10                   | 106602            | 153362          |                     |                      |            |
+| 726961  | Timekeeper                            | LAW DEPARTMENT              | 2025-08-18 00:00:00 | 2025-08-29 00:00:00  | 11                   | 42288             | 68509           |                     |                      |            |
+| 727227  | IT Support Analyst                    | DEPARTMENT OF CORRECTION    | 2025-08-18 00:00:00 | 2025-08-29 00:00:00  | 11                   | 77394             | 89003           |                     |                      |            |
+| 723761  | Assistant Director-PS Budget          | DEPARTMENT OF TRANSPORTATION| 2025-08-07 00:00:00 | 2025-08-20 00:00:00  | 13                   | 40000             | 140000          |                     |                      |            |
+| 724580  | Agency Compliance Coordinator         | DEPARTMENT OF CORRECTION    | 2025-08-14 00:00:00 | 2025-08-27 00:00:00  | 13                   | 34.4105           | 53.4171            |                     |                      |            |
+| 725802  | PMO Analyst                           | NYC POLICE PENSION FUND     | 2025-08-12 00:00:00 | 2025-08-25 00:00:00  | 13                   | 59537             | 68468           |                     |                      |            |
+| 725802  | PMO Analyst                           | NYC POLICE PENSION FUND     | 2025-08-12 00:00:00 | 2025-08-25 00:00:00  | 13                   | 59537             | 68468           |                     |                      |            |
+| 726426  | Deputy Director of Historic Houses    | DEPT OF PARKS & RECREATION  | 2025-08-15 00:00:00 | 2025-08-29 00:00:00  | 14                   | 100000            | 105000          |                     |                      |            |
+| 724169  | Deputy Director of Interagency Coordination | DEPT OF PARKS & RECREATION  | 2025-08-08 00:00:00 | 2025-08-22 00:00:00  | 14             | 105000            | 115000          |                     |                      |            |
+| 719312  | City Tax Auditor                      | DEPARTMENT OF FINANCE       | 2025-08-07 00:00:00 | 2025-08-21 00:00:00  | 14                   | 88549             | 93285           |                     |                      |            |
