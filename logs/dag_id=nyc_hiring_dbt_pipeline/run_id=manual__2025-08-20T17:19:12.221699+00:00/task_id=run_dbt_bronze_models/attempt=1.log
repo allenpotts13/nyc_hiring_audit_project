@@ -1,0 +1,38 @@
+[2025-08-20T17:19:14.814+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-20T17:19:14.835+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: nyc_hiring_dbt_pipeline.run_dbt_bronze_models manual__2025-08-20T17:19:12.221699+00:00 [queued]>
+[2025-08-20T17:19:14.843+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: nyc_hiring_dbt_pipeline.run_dbt_bronze_models manual__2025-08-20T17:19:12.221699+00:00 [queued]>
+[2025-08-20T17:19:14.844+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-08-20T17:19:14.877+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): run_dbt_bronze_models> on 2025-08-20 17:19:12.221699+00:00
+[2025-08-20T17:19:14.881+0000] {standard_task_runner.py:63} INFO - Started process 55516 to run task
+[2025-08-20T17:19:14.884+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'nyc_hiring_dbt_pipeline', 'run_dbt_bronze_models', 'manual__2025-08-20T17:19:12.221699+00:00', '--job-id', '16', '--raw', '--subdir', 'DAGS_FOLDER/dbt_dag.py', '--cfg-path', '/tmp/tmp1b6p98vy']
+[2025-08-20T17:19:14.886+0000] {standard_task_runner.py:91} INFO - Job 16: Subtask run_dbt_bronze_models
+[2025-08-20T17:19:14.960+0000] {task_command.py:426} INFO - Running <TaskInstance: nyc_hiring_dbt_pipeline.run_dbt_bronze_models manual__2025-08-20T17:19:12.221699+00:00 [running]> on host 4e81cb17b5ff
+[2025-08-20T17:19:15.059+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='nyc_hiring_dbt_pipeline' AIRFLOW_CTX_TASK_ID='run_dbt_bronze_models' AIRFLOW_CTX_EXECUTION_DATE='2025-08-20T17:19:12.221699+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-20T17:19:12.221699+00:00'
+[2025-08-20T17:19:15.060+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-20T17:19:15.068+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-20T17:19:15.068+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/airflow/dags/dbt_dag.py", line 19, in run_dbt_command
+    process = subprocess.run(
+  File "/usr/local/lib/python3.10/subprocess.py", line 503, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/usr/local/lib/python3.10/subprocess.py", line 971, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/local/lib/python3.10/subprocess.py", line 1863, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/airflow/nyc_dbt_project'
+[2025-08-20T17:19:15.081+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=nyc_hiring_dbt_pipeline, task_id=run_dbt_bronze_models, run_id=manual__2025-08-20T17:19:12.221699+00:00, execution_date=20250820T171912, start_date=20250820T171914, end_date=20250820T171915
+[2025-08-20T17:19:15.113+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 16 for task run_dbt_bronze_models ([Errno 2] No such file or directory: '/opt/airflow/nyc_dbt_project'; 55516)
+[2025-08-20T17:19:15.135+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-08-20T17:19:15.155+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-08-20T17:19:15.177+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

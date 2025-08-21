@@ -59,3 +59,36 @@
 2025-08-18 17:23:20,421 - __main__ - INFO - Saved Parquet file to /tmp/Jobs_NYC_Postings_Data.parquet
 2025-08-18 17:23:20,476 - __main__ - INFO - Parquet file uploaded to MinIO at project4-bronze/raw/Jobs_NYC_Postings_Data.parquet
 2025-08-18 17:23:20,479 - __main__ - INFO - Data acquisition completed successfully.
+2025-08-20 15:32:18,831 - src.data_acquisition - INFO - ============================================================
+2025-08-20 15:32:18,832 - src.data_acquisition - INFO - STARTING DATA ACQUISITION
+2025-08-20 15:32:18,832 - src.data_acquisition - INFO - ============================================================
+2025-08-20 15:32:19,163 - src.data_acquisition - INFO - URL for Citywide_Payroll_Data.json: https://data.cityofnewyork.us/resource/k397-673e.json
+2025-08-20 15:32:19,164 - src.data_acquisition - INFO - Downloading JSON data from https://data.cityofnewyork.us/resource/k397-673e.json
+2025-08-20 15:32:20,359 - src.data_acquisition - INFO - Saved Parquet file to /tmp/Citywide_Payroll_Data.parquet
+2025-08-20 15:32:20,380 - src.data_acquisition - INFO - Parquet file uploaded to MinIO at project4-bronze/raw/Citywide_Payroll_Data.parquet
+2025-08-20 15:32:20,381 - src.data_acquisition - INFO - URL for Jobs_NYC_Postings_Data.json: https://data.cityofnewyork.us/resource/kpav-sd4t.json
+2025-08-20 15:32:20,381 - src.data_acquisition - INFO - Downloading JSON data from https://data.cityofnewyork.us/resource/kpav-sd4t.json
+2025-08-20 15:32:21,228 - src.data_acquisition - INFO - Saved Parquet file to /tmp/Jobs_NYC_Postings_Data.parquet
+2025-08-20 15:32:21,376 - src.data_acquisition - INFO - Parquet file uploaded to MinIO at project4-bronze/raw/Jobs_NYC_Postings_Data.parquet
+2025-08-20 17:18:55,723 - src.data_acquisition - INFO - ============================================================
+2025-08-20 17:18:55,723 - src.data_acquisition - INFO - STARTING DATA ACQUISITION
+2025-08-20 17:18:55,724 - src.data_acquisition - INFO - ============================================================
+2025-08-20 17:18:56,032 - src.data_acquisition - INFO - URL for Citywide_Payroll_Data.json: https://data.cityofnewyork.us/resource/k397-673e.json
+2025-08-20 17:18:56,033 - src.data_acquisition - INFO - Downloading JSON data from https://data.cityofnewyork.us/resource/k397-673e.json
+2025-08-20 17:18:57,403 - src.data_acquisition - INFO - Saved Parquet file to /tmp/Citywide_Payroll_Data.parquet
+2025-08-20 17:18:57,424 - src.data_acquisition - INFO - Parquet file uploaded to MinIO at project4-bronze/raw/Citywide_Payroll_Data.parquet
+2025-08-20 17:18:57,425 - src.data_acquisition - INFO - URL for Jobs_NYC_Postings_Data.json: https://data.cityofnewyork.us/resource/kpav-sd4t.json
+2025-08-20 17:18:57,426 - src.data_acquisition - INFO - Downloading JSON data from https://data.cityofnewyork.us/resource/kpav-sd4t.json
+2025-08-20 17:18:59,580 - src.data_acquisition - INFO - Saved Parquet file to /tmp/Jobs_NYC_Postings_Data.parquet
+2025-08-20 17:18:59,652 - src.data_acquisition - INFO - Parquet file uploaded to MinIO at project4-bronze/raw/Jobs_NYC_Postings_Data.parquet
+2025-08-21 00:00:06,684 - src.data_acquisition - INFO - ============================================================
+2025-08-21 00:00:06,685 - src.data_acquisition - INFO - STARTING DATA ACQUISITION
+2025-08-21 00:00:06,685 - src.data_acquisition - INFO - ============================================================
+2025-08-21 00:00:06,999 - src.data_acquisition - INFO - URL for Citywide_Payroll_Data.json: https://data.cityofnewyork.us/resource/k397-673e.json
+2025-08-21 00:00:07,000 - src.data_acquisition - INFO - Downloading JSON data from https://data.cityofnewyork.us/resource/k397-673e.json
+2025-08-21 00:00:10,631 - src.data_acquisition - INFO - Saved Parquet file to /tmp/Citywide_Payroll_Data.parquet
+2025-08-21 00:00:10,652 - src.data_acquisition - INFO - Parquet file uploaded to MinIO at project4-bronze/raw/Citywide_Payroll_Data.parquet
+2025-08-21 00:00:10,653 - src.data_acquisition - INFO - URL for Jobs_NYC_Postings_Data.json: https://data.cityofnewyork.us/resource/kpav-sd4t.json
+2025-08-21 00:00:10,654 - src.data_acquisition - INFO - Downloading JSON data from https://data.cityofnewyork.us/resource/kpav-sd4t.json
+2025-08-21 00:00:12,269 - src.data_acquisition - INFO - Saved Parquet file to /tmp/Jobs_NYC_Postings_Data.parquet
+2025-08-21 00:00:12,319 - src.data_acquisition - INFO - Parquet file uploaded to MinIO at project4-bronze/raw/Jobs_NYC_Postings_Data.parquet
