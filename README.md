@@ -11,7 +11,7 @@ The pipeline ingests raw NY job postings, processes and cleans the data, applies
 3. Apply fuzzy string matching to business titles
 4. Generate gold tables in DuckDB for dashboarding
 
--**Tools**: Python(pandas, rapidfuzz), dbt, Airflow, DuckDB, Metabase
+- **Tools**: Python(pandas, rapidfuzz), dbt, Airflow, DuckDB, Metabase
 
 ## 2. Final DuckDB Schema
 ### nyc_job_postings_gold
@@ -87,7 +87,8 @@ The pipeline ingests raw NY job postings, processes and cleans the data, applies
 2. Getting the fuzzy match logic figured out
 3. Hooking Metabase and DuckDB. 
 4. Sick day/vacation day
-**Prioritization**
+
+- **Prioritization**
 1. Focused on the requested deliverables
 2. Testing which database I was going to use
 
