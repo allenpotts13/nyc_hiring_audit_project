@@ -12,16 +12,31 @@ logger = setup_logger(__name__, "logs/data_acquisition.log")
 
 load_dotenv()
 
-def api_call(url, filename):
-    logger.info(f"Downloading JSON data from {url}")
+def api_call(url, filename, limit=50000):
+    logger.info(f"Downloading paginated data from {url}")
     try:
-        response = requests.get(url)
-        response.raise_for_status()
-        json_data = response.json()
+        offset = 0
+        dfs = []
+        while True:
+            paged_url = f"{url}?$limit={limit}&$offset={offset}"
+            logger.info(f"Requesting: {paged_url}")
+            response = requests.get(paged_url)
+            response.raise_for_status()
+            chunk = response.json()
+            if not chunk:
+                break
+            df_chunk = pd.DataFrame(chunk)
+            dfs.append(df_chunk)
+            if len(df_chunk) < limit:
+                break
+            offset += limit
 
-        df = pd.DataFrame(json_data)
+        if not dfs:
+            logger.error("No data returned from API.")
+            return False
+
+        df = pd.concat(dfs, ignore_index=True)
         temp_parquet_path = os.path.join("/tmp", filename.replace(".json", ".parquet"))
-
         df.to_parquet(temp_parquet_path, index=False)
         logger.info(f"Saved Parquet file to {temp_parquet_path}")
 
@@ -43,7 +58,7 @@ def api_call(url, filename):
         os.remove(temp_parquet_path)
         return True
     except Exception as e:
-        logger.error(f"Failed to process JSON and upload Parquet to MinIO: {e}")
+        logger.error(f"Failed to process paginated API and upload Parquet to MinIO: {e}")
         return False
     
 def convert_excel_minio_to_parquet():
