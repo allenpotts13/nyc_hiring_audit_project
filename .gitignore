@@ -232,6 +232,11 @@ docker
 # **/.airflow-webserver.pid
 # .airflow-webserver.pid
 
+airflow.db
+duckdb/
+src/.env
+*.pyc
+
 
 
 
