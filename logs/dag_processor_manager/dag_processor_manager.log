@@ -28894,3 +28894,24 @@ File Path                                        PID    Runtime      # DAGs    #
 /opt/airflow/airflow/dags/transformation_dag.py                           1           0  0.71s           2025-08-21T15:40:48
 /opt/airflow/airflow/dags/dbt_dag.py                                      1           0  0.20s           2025-08-21T15:40:49
 ================================================================================
+[2025-08-21T15:41:35.190+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/airflow/dags/transformation_dag.py                           1           0  0.71s           2025-08-21T15:41:19
+/opt/airflow/airflow/dags/ingestion_dag.py                                1           0  0.63s           2025-08-21T15:41:35
+/opt/airflow/airflow/dags/dbt_dag.py                                      1           0  0.20s           2025-08-21T15:41:21
+================================================================================
+[2025-08-21T15:42:06.230+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/airflow/dags/transformation_dag.py                           1           0  0.71s           2025-08-21T15:41:50
+/opt/airflow/airflow/dags/ingestion_dag.py                                1           0  0.71s           2025-08-21T15:42:06
+/opt/airflow/airflow/dags/dbt_dag.py                                      1           0  0.20s           2025-08-21T15:41:52
+================================================================================
+[2025-08-21T15:42:17.419+0000] {manager.py:452} INFO - Exiting gracefully upon receiving signal 15
